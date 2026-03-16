@@ -1,7 +1,8 @@
 import random
 import streamlit as st
+from logic_utils import check_guess
 
-def get_range_for_difficulty(difficulty: str):
+def get_range_for_difficulty(difficulty: str):        #FIXME: ranges are not balanced
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":
@@ -29,25 +30,7 @@ def parse_guess(raw: str):
     return True, value, None
 
 
-def check_guess(guess, secret):
-    if guess == secret:
-        return "Win", "🎉 Correct!"
-
-    try:
-        if guess > secret:
-            return "Too High", "📈 Go HIGHER!"
-        else:
-            return "Too Low", "📉 Go LOWER!"
-    except TypeError:
-        g = str(guess)
-        if g == secret:
-            return "Win", "🎉 Correct!"
-        if g > secret:
-            return "Too High", "📈 Go HIGHER!"
-        return "Too Low", "📉 Go LOWER!"
-
-
-def update_score(current_score: int, outcome: str, attempt_number: int):
+def update_score(current_score: int, outcome: str, attempt_number: int):      #FIXME: scoring is unbalanced 
     if outcome == "Win":
         points = 100 - 10 * (attempt_number + 1)
         if points < 10:
@@ -77,7 +60,7 @@ difficulty = st.sidebar.selectbox(
     index=1,
 )
 
-attempt_limit_map = {
+attempt_limit_map = {        #FIXME: attempt limits are not balanced
     "Easy": 6,
     "Normal": 8,
     "Hard": 5,
@@ -107,7 +90,7 @@ if "history" not in st.session_state:
 st.subheader("Make a guess")
 
 st.info(
-    f"Guess a number between 1 and 100. "
+    f"Guess a number between 1 and 100. "      #FIXME: should be based on difficulty
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
 
@@ -133,7 +116,7 @@ with col3:
 
 if new_game:
     st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    st.session_state.secret = random.randint(1, 100)    #FIXME: should be based on difficulty
     st.success("New game started.")
     st.rerun()
 

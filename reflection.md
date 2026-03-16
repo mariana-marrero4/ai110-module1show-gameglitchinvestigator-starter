@@ -20,13 +20,22 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   -- The message "Guess a number between 1 and 100" always stays the same even after chaging the difficulty mode
   -- New game does not respect the difficulty so the secret number is always chosen between 1-100
 
+
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
-- Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+
+  I used a mix of the Copilot Chat in VS Code and Claude on my web browser. I mostly worked with the Copilot Chat to help with bug fixes and the refactoring. On the other hand, I used Claude fro any problem I faced with running the program and installing dependencies. 
+
+- Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).  #TODO-finish answering
+
+A correct AI suggestion would be when I asked it to help with refactoring and update the inputs. It changed thing correctly and I double checked for any mistakes or redundant information. 
+
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
----
+
+A misleading AI suggestion was when I asked to create the test to verify if the hints were working right it created another file and a new test that were redundant. I verified the result by double checking the code and asking the AI if the new test was necesary along with the new file. After the AI deemed it unnecesary it deleted them.
+
 
 ## 3. Debugging and testing your fixes
 
