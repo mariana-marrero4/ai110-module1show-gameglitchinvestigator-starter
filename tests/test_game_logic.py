@@ -1,4 +1,4 @@
-from logic_utils import check_guess
+from logic_utils import check_guess, get_range_for_difficulty, parse_guess
 
 def test_winning_guess():
     # Test winning with different numbers from game ranges
@@ -35,3 +35,50 @@ def test_guess_too_low():
     outcome, message = check_guess(35, 42)
     assert outcome == "Too Low"
     assert message == "📈 Go HIGHER!"
+
+
+def test_get_range_for_difficulty():
+    # Test the ranges for each difficulty level
+    assert get_range_for_difficulty("Easy") == (1, 20)
+    assert get_range_for_difficulty("Normal") == (1, 50)
+    assert get_range_for_difficulty("Hard") == (1, 100)
+    # Test default case for invalid difficulty
+    assert get_range_for_difficulty("Invalid") == (1, 100)
+
+
+def test_parse_guess():
+    # Test valid positive number
+    ok, value, error = parse_guess("10")
+    assert ok == True
+    assert value == 10
+    assert error is None
+
+    # Test negative number
+    ok, value, error = parse_guess("-5")
+    assert ok == False
+    assert value is None
+    assert error == "Guess must be a positive number greater than zero."
+
+    # Test zero
+    ok, value, error = parse_guess("0")
+    assert ok == False
+    assert value is None
+    assert error == "Guess must be a positive number greater than zero."
+
+    # Test non-number
+    ok, value, error = parse_guess("abc")
+    assert ok == False
+    assert value is None
+    assert error == "That is not a number."
+
+    # Test empty string
+    ok, value, error = parse_guess("")
+    assert ok == False
+    assert value is None
+    assert error == "Enter a guess."
+
+    # Test None
+    ok, value, error = parse_guess(None)
+    assert ok == False
+    assert value is None
+    assert error == "Enter a guess."

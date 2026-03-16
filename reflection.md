@@ -27,14 +27,14 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
   I used a mix of the Copilot Chat in VS Code and Claude on my web browser. I mostly worked with the Copilot Chat to help with bug fixes and the refactoring. On the other hand, I used Claude fro any problem I faced with running the program and installing dependencies. 
 
-- Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).  #TODO-finish answering
+- Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result). 
 
-A correct AI suggestion would be when I asked it to help with refactoring and update the inputs. It changed thing correctly and I double checked for any mistakes or redundant information. 
+A correct AI suggestion would be when I asked it to help with refactoring and update the inputs. It changed thing correctly and I double checked for any mistakes or redundant information. For another bug fix the AI did changes correctly and updated the tests and code depending on the changes I suggested like how to handle negative numbers and cero.
 
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
 
-A misleading AI suggestion was when I asked to create the test to verify if the hints were working right it created another file and a new test that were redundant. I verified the result by double checking the code and asking the AI if the new test was necesary along with the new file. After the AI deemed it unnecesary it deleted them.
+A misleading AI suggestion was when I asked to create the test to verify if the hints were working right it created another file and a new test that were redundant. I verified the result by double checking the code and asking the AI if the new test was necesary along with the new file. After the AI deemed it unnecesary it deleted them. Another incorrect suggestions was that the AI suggested to delet part of a code that was still needed and broke the program but I catched the error and fixed it.
 
 
 ## 3. Debugging and testing your fixes
