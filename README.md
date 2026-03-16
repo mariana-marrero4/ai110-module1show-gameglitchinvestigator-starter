@@ -39,10 +39,10 @@ It wrote the code, ran away, and now the game is unplayable.
 - [ ] [Insert a screenshot of your fixed, winning game here]
 
    1. Screenshot of fixed winning game
-      ![Screenshot](Images for ReadMe/WinningScreen-P1.png)
+      ![Screenshot](Images_for_ReadMe/WinningScreen-P1.png)
 
    2. Screenshot of Edge Case 
-      ![Screenshot](Images for ReadMe/edgecase-P1.png)
+      ![Screenshot](Images_for_ReadMe/edgecase-P1.png)
 
 ## 🚀 Stretch Features
 
