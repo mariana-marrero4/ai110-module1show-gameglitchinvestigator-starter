@@ -1,4 +1,4 @@
-from logic_utils import check_guess, get_range_for_difficulty, parse_guess
+from logic_utils import check_guess, get_range_for_difficulty, parse_guess, update_score
 
 def test_winning_guess():
     # Test winning with different numbers from game ranges
@@ -82,3 +82,28 @@ def test_parse_guess():
     assert ok == False
     assert value is None
     assert error == "Enter a guess."
+
+
+def test_update_score():
+    # Test winning with different attempt numbers
+    # Win on attempt 1: 100 - 10*1 = 90 points
+    assert update_score(0, "Win", 1) == 90
+    assert update_score(50, "Win", 1) == 140  # current_score + 90
+
+    # Win on attempt 5: 100 - 10*5 = 50 points
+    assert update_score(0, "Win", 5) == 50
+
+    # Win on attempt 10: 100 - 10*10 = 0, but min 10 points
+    assert update_score(0, "Win", 10) == 10
+
+    # Win on attempt 15: still min 10
+    assert update_score(0, "Win", 15) == 10
+
+    # Test incorrect guesses: Too High or Too Low deduct 5 points
+    assert update_score(0, "Too High", 1) == -5
+    assert update_score(10, "Too High", 2) == 5  # 10 - 5 = 5
+    assert update_score(0, "Too Low", 1) == -5
+    assert update_score(20, "Too Low", 3) == 15
+
+    # Test invalid outcome: return current_score unchanged
+    assert update_score(100, "Invalid", 1) == 100

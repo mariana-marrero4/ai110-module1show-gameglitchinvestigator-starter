@@ -6,7 +6,7 @@ def get_range_for_difficulty(difficulty: str):      #FIX: Refactored logic into 
         return 1, 50
     if difficulty == "Hard":
         return 1, 100
-    return 1, 100
+    return 1, 100     
 
 
 def parse_guess(raw: str):        #FIX: Refactored logic into logic_utils.py using Copilot Agent mode. Now does not accept zero or negative numbers.
@@ -54,6 +54,15 @@ def check_guess(guess, secret):     #FIX: Refactored logic into logic_utils.py u
         return "Too Low", "📈 Go HIGHER!"
 
 
-def update_score(current_score: int, outcome: str, attempt_number: int):
+def update_score(current_score: int, outcome: str, attempt_number: int):     #FIX: Refactored logic into logic_utils.py using Copilot Agent mode, and changed scoring to be more balanced.
     """Update score based on outcome and attempt number."""
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+    if outcome == "Win":
+        points = 100 - 10 * attempt_number
+        if points < 10:
+            points = 10
+        return current_score + points
+
+    if outcome in ("Too High", "Too Low"):
+        return current_score - 5
+
+    return current_score

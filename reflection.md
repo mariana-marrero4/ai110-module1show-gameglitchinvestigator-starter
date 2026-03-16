@@ -40,11 +40,17 @@ A misleading AI suggestion was when I asked to create the test to verify if the 
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
-- Describe at least one test you ran (manual or using pytest)  
-  and what it showed you about your code.
+
+  To decide whether a bug was fixed or not I would run i ton pytest to verify if it passed the tests created and manually check the game. Most times I would doubel check manually because the tests were mostly created by AI. After many tries and confirmation that the code was working, plus brainstorming for possible errors that could happen, I considered a bug fixed if it passed the tests created and worked manually.
+
+- Describe at least one test you ran (manual or using pytest) and what it showed you about your code.
+
+  Most of the tests I validated manually but while doind so I found some minor issues. For instance, the game accepted negative numbers and cero so I changed that logic with Copilot Agent. This way when the players input is a negative number o zero the game will not accept that input and instead will show a message sayeing "Guess must be a positive number greater than zero". 
+
 - Did AI help you design or understand any tests? How?
 
----
+  The pytests where mostly designed by Copilot Agents because I'm more of a munuall tester. However, I was having problems understanding the logic behind the scores and AI helped me understand both the tests it created and the logic of how it owrked. This way I was able to provide options and possible suggestions to changes in logic.
+
 
 ## 4. What did you learn about Streamlit and state?
 
