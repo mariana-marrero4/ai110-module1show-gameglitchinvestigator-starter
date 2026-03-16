@@ -55,7 +55,10 @@ def check_guess(guess, secret):     #FIX: Refactored logic into logic_utils.py u
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):     #FIX: Refactored logic into logic_utils.py using Copilot Agent mode, and changed scoring to be more balanced.
-    """Update score based on outcome and attempt number."""
+    """Update score based on outcome and attempt number.
+
+    The score is never allowed to go below 0.
+    """
     if outcome == "Win":
         points = 100 - 10 * attempt_number
         if points < 10:
@@ -63,6 +66,6 @@ def update_score(current_score: int, outcome: str, attempt_number: int):     #FI
         return current_score + points
 
     if outcome in ("Too High", "Too Low"):
-        return current_score - 5
+        return max(current_score - 5, 0)
 
-    return current_score
+    return max(current_score, 0)

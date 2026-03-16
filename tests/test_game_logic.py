@@ -99,10 +99,10 @@ def test_update_score():
     # Win on attempt 15: still min 10
     assert update_score(0, "Win", 15) == 10
 
-    # Test incorrect guesses: Too High or Too Low deduct 5 points
-    assert update_score(0, "Too High", 1) == -5
+    # Test incorrect guesses: Too High or Too Low deduct 5 points, but score never goes below 0
+    assert update_score(0, "Too High", 1) == 0
     assert update_score(10, "Too High", 2) == 5  # 10 - 5 = 5
-    assert update_score(0, "Too Low", 1) == -5
+    assert update_score(0, "Too Low", 1) == 0
     assert update_score(20, "Too Low", 3) == 15
 
     # Test invalid outcome: return current_score unchanged

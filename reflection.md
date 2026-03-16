@@ -49,18 +49,26 @@ A misleading AI suggestion was when I asked to create the test to verify if the 
 
 - Did AI help you design or understand any tests? How?
 
-  The pytests where mostly designed by Copilot Agents because I'm more of a munuall tester. However, I was having problems understanding the logic behind the scores and AI helped me understand both the tests it created and the logic of how it owrked. This way I was able to provide options and possible suggestions to changes in logic.
+  The pytests where mostly designed by Copilot Agents because I'm more of a munual tester. However, I was having problems understanding the logic behind the scores and AI helped me understand both the tests it created and the logic of how it owrked. This way I was able to provide options and possible suggestions to changes in logic.
 
 
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 
----
+  I would explain Streamlit reruns like a robot witout memory because one you ask you get an answer an then they forget all about it or change. Then I would explain the session states like the memory of the robot because a session state remembers the information while you are using the app. This way the both work together, one runs the program and the other makes sure to remember what happened.
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+
+  I think one strategy I want to reuse in being methodic and organized with finding bugs and 'marking the crime scene". I believe this helpend me a lot when fixing the bugs this way I don't have to constantly memorize what to do next because it's already there. I found this strategy more effective and less time consuming.
+
 - What is one thing you would do differently next time you work with AI on a coding task?
+
+  I think one thing I would do differently is test handeling. I want to try to create the tests on my own first and then double check with AI this way I don't feel like I can't handle testing well. Overall, for next time I want to use AI as a backup for testing instead of heavily rely on it.
+
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+  I found AI generated code to be effective when given the right amount of information. I also consider that it helped me learn more about effcient ways to handle testing and avoid redundant code.  
